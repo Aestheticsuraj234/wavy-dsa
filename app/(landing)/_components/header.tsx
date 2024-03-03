@@ -1,5 +1,5 @@
 "use client";
-import { usePathname } from "next/navigation";
+import { usePathname , useRouter } from "next/navigation";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
 import { brainwave } from "@/public/assets/assets";
@@ -9,9 +9,11 @@ import MenuSvg from "@/public/assets/assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/header";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   const pathname = usePathname();
+  const router = useRouter();
   const [openNavigation, setOpenNavigation] = useState(false);
 
   const toggleNavigation = () => {
@@ -69,15 +71,18 @@ const Header = () => {
           <HamburgerMenu />
         </nav>
 
-        <a
-          href="#signup"
+        <Link
+          href="/register"
           className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
         >
           New account
-        </a>
-        <Button className="hidden lg:flex" href="#login">
-          Sign in
+        </Link>
+        <Link href={"/login"}>        
+        <Button  className="hidden lg:flex" href="#login">
+          Login in
         </Button>
+        </Link>
+
 
         <Button
           className="ml-auto lg:hidden"
