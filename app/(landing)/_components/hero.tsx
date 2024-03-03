@@ -1,3 +1,4 @@
+"use client";
 import { curve, heroBackground, robot } from "@/public/assets/assets";
 import Button from "./landing-btn";
 import Section from "./section";
