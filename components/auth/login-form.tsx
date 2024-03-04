@@ -95,6 +95,7 @@ const LoginForm = () => {
           <FormError message={error} />
           <FormSuccess message={success} />
           <Button
+          disabled={isPending}
           type="submit"
           className="w-full"
           >
